@@ -1,0 +1,29 @@
+{
+    "name": "quanzo/yii2-shortcode",
+    "description": "Implementation shortcodes. Module for yii2",
+	"version": "1.0.0",
+    "authors": [
+        {
+            "name": "Quanzo",
+            "email": "iquanzo@gmail.com"
+        }
+    ],
+    "keywords": [
+		"yii",
+		"yii2",
+		"yii2 module",
+		"shortcode"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6",
+		"yiisoft/yii2": "~2.0.0",
+		"quanzo/x51-shortcode": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "x51\\yii2\\modules\\shortcode\\": ""
+        }
+    }
+}
