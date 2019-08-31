@@ -12,7 +12,7 @@ Installation
 
 3.  Add to configuration
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```php
 $config = [
     'bootstrap' => [
         'shortcode',
@@ -20,32 +20,32 @@ $config = [
     'modules' => [
         'shortcode' => [
             'class' => '\x51\yii2\modules\shortcode\Module',
-			'automatic' => false, // process content before output to browser
-			'exclude' => [ // Routes in which the use of shortcodes is prohibited. Use * and ? mask
-				'blocks/*',
-			],
-			'shortcodes' => [
-				'url' => function ($arParams, $content = '') { // use [url path="/site/index"]main page[/url] 
-					if (!empty($arParams['path'])) {
-						$arUrl = [
-							$arParams['path']
-						];
-						foreach ($arParams as $name => $val) {
-							if ($name != 0 || $name != 'path') {
-								$arUrl[$name] = $val;
-							}
-						}
-						$href = Url::to($arUrl);
-						if ($content) {
-							return Html::a($content, $href);
-						} else {
-							return $href;
-						}
-					}
-					return '';
-				},
-			]
+            'automatic' => false, // process content before output to browser
+            'exclude' => [ // Routes in which the use of shortcodes is prohibited. Use * and ? mask
+                'blocks/*',
+            ],
+            'shortcodes' => [
+                'url' => function ($arParams, $content = '') { // use [url path="/site/index"]main page[/url] 
+                    if (!empty($arParams['path'])) {
+                        $arUrl = [
+                            $arParams['path']
+                        ];
+                        foreach ($arParams as $name => $val) {
+                            if ($name != 0 || $name != 'path') {
+                                $arUrl[$name] = $val;
+                            }
+                        }
+                        $href = Url::to($arUrl);
+                        if ($content) {
+                            return Html::a($content, $href);
+                        } else {
+                            return $href;
+                        }
+                    }
+                    return '';
+                },
+            ]
         ],
     ]
 ];
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
